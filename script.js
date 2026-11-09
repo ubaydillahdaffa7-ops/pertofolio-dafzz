@@ -794,20 +794,19 @@ $("#restoreFile").onchange = e => {
     e.target.value = "";
 };
 
+
 // ==========================================
-// MUSIC PLAYER
-// File: background.mp3
-// Letakkan sejajar dengan index.html
+// MUSIC PLAYER - PILIH MUSIK DARI HP
 // ==========================================
 
-const music = new Audio("background.mp3");
+const music = new Audio();
 
 music.loop = true;
 music.volume = 0.35;
 
-const musicButton = document.createElement("button");
+let musicURL = null;
 
-musicButton.id = "musicButton";
+const musicButton = document.createElement("button");
 musicButton.textContent = "♫ Putar Musik";
 
 musicButton.style.cssText = `
@@ -820,22 +819,72 @@ border-radius:30px;
 border:1px solid rgba(255,255,255,.3);
 background:#142c50;
 color:white;
-cursor:pointer;
 `;
 
-document.body.appendChild(musicButton);
+const chooseMusicButton = document.createElement("button");
+chooseMusicButton.textContent = "📁 Pilih Musik";
+
+chooseMusicButton.style.cssText = `
+position:fixed;
+bottom:20px;
+right:155px;
+z-index:9999;
+padding:12px 15px;
+border-radius:30px;
+border:1px solid rgba(255,255,255,.3);
+background:#142c50;
+color:white;
+`;
+
+const musicInput = document.createElement("input");
+musicInput.type = "file";
+musicInput.accept = "audio/*";
+musicInput.hidden = true;
+
+document.body.append(
+    musicButton,
+    chooseMusicButton,
+    musicInput
+);
+
+chooseMusicButton.onclick = () => {
+    musicInput.click();
+};
+
+musicInput.onchange = async () => {
+    const file = musicInput.files[0];
+    if (!file) return;
+
+    if (musicURL) URL.revokeObjectURL(musicURL);
+
+    musicURL = URL.createObjectURL(file);
+    music.src = musicURL;
+
+    try {
+        await music.play();
+        musicButton.textContent = "Ⅱ Pause Musik";
+        toast("Musik berhasil diputar!");
+    } catch (e) {
+        toast("Gagal memutar musik.");
+    }
+};
 
 musicButton.onclick = async () => {
-    try {
-        if (music.paused) {
+    if (!music.src) {
+        musicInput.click();
+        return;
+    }
+
+    if (music.paused) {
+        try {
             await music.play();
             musicButton.textContent = "Ⅱ Pause Musik";
-        } else {
-            music.pause();
-            musicButton.textContent = "♫ Putar Musik";
+        } catch (e) {
+            toast("Gagal memutar musik.");
         }
-    } catch (e) {
-        toast("Musik tidak ditemukan. Periksa background.mp3");
+    } else {
+        music.pause();
+        musicButton.textContent = "♫ Putar Musik";
     }
 };
 
