@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071226"><title>Portfolio Pribadi</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient"></div><header class="topbar"><a class="brand" href="#home">PORT<span>FOLIO.</span></a><nav><a href="#about">Tentang</a><a href="#links">Link</a><a href="#photos">Foto</a><a href="#projects">Proyek</a></nav><button class="edit-toggle" id="editToggle">✦ Mode Edit</button></header>
+<main>
+<section class="hero" id="home"><div class="hero-bg"></div><div class="hero-copy"><p class="eyebrow">SELAMAT DATANG DI WEBSITE SAYA</p><h1>HALO, SAYA<br><span class="accent" id="heroName">Nama Kamu</span></h1><p class="hero-sub" id="heroTag">Kreator • Pelajar • Freelancer</p><a class="primary" href="#about">Jelajahi Portfolio <span>↗</span></a></div><div class="hero-photo"><img id="heroImage" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1000" alt="Foto profil"></div><div class="scroll-note">SCROLL UNTUK MELIHAT ↓</div></section>
+<section class="intro section" id="about"><div class="section-label">01 / TENTANG SAYA</div><div><h2>Hai, saya <span class="accent" id="aboutName">Nama Kamu</span>.</h2><p id="aboutText">Selamat datang di portfolio pribadi saya. Di sini kamu bisa mengenal saya, melihat foto, menemukan tautan penting, dan menjelajahi proyek yang pernah saya buat.</p><div class="mini-stats"><div><b>01</b><span>Personal</span></div><div><b>02</b><span>Kreatif</span></div><div><b>03</b><span>Berkarya</span></div></div></div></section>
+<section class="section" id="links"><div class="section-head"><div><div class="section-label">02 / TEMUKAN SAYA</div><h2>Link <span class="accent">Saya</span></h2></div><button class="edit-btn" data-edit="links">＋ Ubah Link</button></div><div class="link-grid" id="linkList"></div></section>
+<section class="section" id="photos"><div class="section-head"><div><div class="section-label">03 / GALERI</div><h2>Foto <span class="accent">Saya</span></h2></div><button class="edit-btn" data-edit="photos">＋ Ubah Foto</button></div><div class="photo-grid" id="photoList"></div></section>
+<section class="section" id="projects"><div class="section-head"><div><div class="section-label">04 / HASIL KARYA</div><h2>Proyek <span class="accent">Saya</span></h2></div><button class="edit-btn" data-edit="projects">＋ Ubah Proyek</button></div><div class="project-grid" id="projectList"></div></section>
+</main><footer><a class="brand" href="#home">PORT<span>FOLIO.</span></a><p id="footerText">Dibuat dengan kreativitas dan semangat.</p><span>© <span id="year"></span> Portfolio Pribadi</span></footer>
+<div class="modal" id="editor" aria-hidden="true"><div class="modal-card"><button class="close" id="closeEditor">×</button><div class="section-label">PENGATURAN WEBSITE</div><h2 id="editorTitle">Edit Portfolio</h2><div id="editorBody"></div><div class="modal-actions"><button class="secondary" id="cancelEdit">Batal</button><button class="primary" id="saveEdit">Simpan Perubahan</button></div></div></div>
+<div class="toast" id="toast"></div><script src="script.js"></script></body></html>
