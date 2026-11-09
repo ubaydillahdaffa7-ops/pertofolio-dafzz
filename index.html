@@ -5,7 +5,94 @@
 <meta name="theme-color" content="#071226"><meta name="edit-password" content="ubayxxx7777"><title>Portfolio Pribadi</title><link rel="stylesheet" href="style.css">
 <style>
 /* Fitur tambahan: style.css utama sengaja tidak diubah. */
-.editor-tools{border:1px solid rgba(70,139,255,.25);background:#09172c;border-radius:10px;padding:12px;margin:14px 0}.editor-tools small{font-size:10px;line-height:1.6;color:#91a4c2}.editor-tools input[type=checkbox]{width:auto;margin-right:7px}.editor-tools input[type=range]{padding:0}.editor-tools select{width:100%;background:#071329;border:1px solid #294366;border-radius:7px;padding:12px;color:white}.item-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.item-actions button{border:1px solid #42618b;background:#122747;color:#bcd7ff;border-radius:6px;padding:7px 10px;cursor:pointer;font-size:11px}.item-actions .remove-item{background:#492b39;color:#ffb8c9;border:0}.item-actions button:disabled{opacity:.35}.utility-dock{position:fixed;right:16px;bottom:18px;z-index:15;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100vw - 32px)}.utility-dock button{border:1px solid #42618b;background:#0d1c35eF;color:#c5dcff;padding:10px 12px;border-radius:30px;font:600 11px 'DM Sans';cursor:pointer;box-shadow:0 6px 22px #0005}.utility-dock button:hover{border-color:#3986ff}.utility-dock input{display:none}@media(max-width:480px){.utility-dock{right:10px;bottom:10px}.utility-dock button{padding:9px 10px;font-size:10px}}
+.editor-tools{
+  border:1px solid rgba(70,139,255,.25);
+  background:#09172c;
+  border-radius:10px;
+  padding:12px;
+  margin:14px 0
+}
+.editor-tools small{
+  font-size:10px;
+  line-height:1.6;
+  color:#91a4c2
+}
+.editor-tools input[type=checkbox]{
+  width:auto;
+  margin-right:7px
+}
+.editor-tools input[type=range]{
+  padding:0
+}
+.editor-tools select{
+  width:100%;
+  background:#071329;
+  border:1px solid #294366;
+  border-radius:7px;
+  padding:12px;
+  color:white
+}
+.item-actions{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin-top:10px
+}
+.item-actions button{
+  border:1px solid #42618b;
+  background:#122747;
+  color:#bcd7ff;
+  border-radius:6px;
+  padding:7px 10px;
+  cursor:pointer;
+  font-size:11px
+}
+.item-actions .remove-item{
+  background:#492b39;
+  color:#ffb8c9;
+  border:0
+}
+.item-actions button:disabled{
+  opacity:.35
+}
+.utility-dock{
+  position:fixed;
+  right:16px;
+  bottom:18px;
+  z-index:15;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  max-width:calc(100vw - 32px)
+}
+.utility-dock button{
+  border:1px solid #42618b;
+  background:#0d1c35eF;
+  color:#c5dcff;
+  padding:10px 12px;
+  border-radius:30px;
+  font:600 11px 'DM Sans';
+  cursor:pointer;
+  box-shadow:0 6px 22px #0005
+}
+.utility-dock button:hover{
+  border-color:#3986ff
+}
+.utility-dock input{
+  display:none
+}
+@media(max-width:480px){
+  .utility-dock{
+  right:10px;
+  bottom:10px
+}
+.utility-dock button{
+  padding:9px 10px;
+  font-size:10px
+}
+
+}
 
 /* Reveal foto kedua hanya pada area pointer/jari di foto hero. */
 .hero-photo{position:absolute;isolation:isolate;overflow:hidden;--touch-x:50%;--touch-y:50%;--touch-radius:82px}
